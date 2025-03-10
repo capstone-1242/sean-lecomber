@@ -8,6 +8,7 @@ import Card from '../components/Card.astro'
 import Gallery from '../components/Gallery.astro'
 import Form2 from "../components/Form2.astro";
 import Video from "../components/Video.astro";
+import Footer from "../components/Footer.astro"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -21,9 +22,6 @@ import Video from "../components/Video.astro";
 		<h2>Testimonials</h2>
 		<div class="flex flex-wrap m-auto justify-between gap-2.5">
 			<Card />
-			<Card />
-			<Card />
-			<Card />
 		</div>
 	</section>
 	<section class="px-4 py-8">
@@ -35,6 +33,7 @@ import Video from "../components/Video.astro";
 	<section class="px-4 py-8">
 		<Video />
 	</section>
+	<Footer />
 </Layout>
 <style is:global>
 
