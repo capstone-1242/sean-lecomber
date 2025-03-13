@@ -1,0 +1,32 @@
+---
+
+const showDates = [
+  { date: '2024-12-01', venue: 'Yuk Yuk\'s Edmonton' },
+  { date: '2024-12-08', venue: 'Yuk Yuk\'s Calgary' },
+  { date: '2024-12-15', venue: 'Yuk Yuk\'s Vancouver' },
+  { date: '2024-12-22', venue: 'Yuk Yuk\'s Toronto' },
+  { date: '2024-12-29', venue: 'Yuk Yuk\'s Winnipeg' },
+];
+---
+
+<h2 class="w-full mb-4 text-4xl tracking-tight font-extrabold">Show Dates</h2>
+
+<div class="py-1 lg:py-16 px-4 mx-auto max-w-screen-md w-full lg:w-1/2 bg-white text-black">
+  <div class="space-y-4">
+    {showDates.map((show) => (
+      <div class="flex justify-between items-center border border-gray-200 rounded-lg p-4">
+        <span class="text-lg font-medium">{show.date}</span>
+        <span class="text-lg">{show.venue}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-8 text-center">
+    <a href="https://www.yukyuks.com/" target="_blank" class="bg-[#172f43] hover:bg-[#122433] text-white font-bold py-2 px-4 rounded">
+      GET TICKETS AT YUK YUK'S
+    </a>
+    <p class="mt-2 text-sm text-gray-500">
+      *This will take you to an external website
+    </p>
+  </div>
+</div>

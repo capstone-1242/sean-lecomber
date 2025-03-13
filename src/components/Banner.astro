@@ -1,39 +1,26 @@
----
-// import {
-//   BackgroundImage,
-//   ImageSupportDetection,
-// } from "astro-imagetools/components";
----
+<section class="bg-white py-12">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-[#172f43] grid lg:grid-cols-12 gap-6 items-center rounded-lg px-6 sm:px-8 lg:px-12 py-12">
+            <!-- Text Section -->
+            <div class="mr-auto place-self-center lg:col-span-7 pl-[48px]">
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="grid max-w-screen-xl  mx-auto lg:gap-8 xl:gap-0  lg:grid-cols-12">
-        <div class="mr-auto px-4 py-8 place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">A local Comedian who just can't stop</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Sean Lecomber is an Edmonton Comedian that's been working in the stand up scene for over 20 years now, and he's sure to give your funny bone a run for it's money!</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-                Reach Out
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
-        </div> 
-        <div class="lg:mt-0 lg:col-span-5 lg:flex max-w-full">
-            <img class="w-full" src="../src/images/mic-backdrop.webp" alt="mockup">
-        </div>           
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl text-white" aria-level="1">
+                    Hello, I’m Sean!
+                </h1>
+                <p class="max-w-2xl mb-6 text-gray-300 lg:text-xl">
+                    The Stand-Up Comedian From Edmonton That Even Other Comics Will Line Up To See!
+                </p>
+                <a href="#" class="inline-flex items-center justify-center px-[80px] py-[20px] text-base font-medium text-[#172f43] uppercase rounded-[24px] bg-[#c2d6e8] hover:bg-[#aac4dd]">
+                    Reach Out
+                </a>
+                
+                
+                
+            </div>
+            <!-- Image Section -->
+            <div class="lg:col-span-5 flex justify-center pr-[48px]">
+                <img class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl" src="/images/sean-d.jpg" alt="Sean Lecomber, Edmonton comedian">
+            </div>
+        </div>
     </div>
 </section>
-
-
-<!-- classes i took off the container div and the image -->
-<!-- px-4 py-8 -->
-<!-- hidden -->
-<!-- lg:py-16 -->
-
-
-<!-- <style>
-   div.banner {
-    background-image: '../src/images/mic-backdrop.jpg' center / cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   } 
-
-</style> -->
