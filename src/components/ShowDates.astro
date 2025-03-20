@@ -9,12 +9,12 @@ const showDates = [
 ];
 ---
 
-<h2 class="w-full mb-4 text-4xl tracking-tight font-extrabold">Show Dates</h2>
 
 <div class="py-1 lg:py-16 px-4 mx-auto max-w-screen-md w-full lg:w-1/2 bg-white text-black">
-  <div class="space-y-4">
+<h2 class="w-full mb-4 text-4xl tracking-tight font-extrabold">Show Dates</h2>
+  <div class="border-1 rounded-xl">
     {showDates.map((show) => (
-      <div class="flex justify-between items-center border border-gray-200 rounded-lg p-4">
+      <div class="flex justify-between items-center border border-gray-200 rounded-lg p-6 show-date">
         <span class="text-lg font-medium">{show.date}</span>
         <span class="text-lg">{show.venue}</span>
       </div>
@@ -30,3 +30,10 @@ const showDates = [
     </p>
   </div>
 </div>
+
+<style>
+  div.show-date:nth-of-type(even){
+    background: #172f43;
+    color: white;
+  }
+</style>
