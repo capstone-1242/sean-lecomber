@@ -27,13 +27,13 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 
 
 
-	<section class="px-4 py-1">
+	<section class="py-1">
 		<Form2 />
 	</section>
-	<section class="px-4 py-1">
+	<section>
 		<Video2 />
 	</section>
-	<section class="px-4 py-1">
+	<section class="py-1">
 		<Gallery />
 	</section>
 	<!-- Testimonial Grid Section -->
@@ -44,9 +44,9 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 </h2>
 
 <!-- Grid of Testimonial Cards -->
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 testimonial-card sm:hidden md:block">
 	
-	<div class="flex flex-wrap justify-center gap-4">
+	<div class="justify-center flex flex-wrap gap-4">
 			{testimonials.map((testimonial) => (
 					<div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6 flex flex-col">
 							<TestimonialCard 
@@ -58,8 +58,20 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 	</div>
 </div>
 
+<div class="sm:block flex flex-nowrap overflow-x-scroll md:hidden ">
+	{testimonials.map((testimonial) => (
+		<div class="w-full flex flex-col">
+				<TestimonialCard 
+						name_event={testimonial.name_event} 
+						testimonial={testimonial.testimonial} 
+				/>
+		</div>
+))}
+</div>
+
 	
-	
+	<!-- extra classes from overflow cards -->
+	 <!-- sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6 -->
 	<Footer />
 </Layout>
 
@@ -86,6 +98,15 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 		color:#fff;
 
 	}
+
+	@media screen and (max-width:320px ){
+		
+	.testimonial-card{
+		display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+	}
+}
 	main {
 		background-image: url("../assets/background.svg");
 	}
