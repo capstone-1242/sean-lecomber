@@ -17,6 +17,8 @@ import Footer from "../components/Footer.astro";
 
 import { testimonials } from '../data/testimonialData';
 import TestimonialCard from '../components/TestimonialCard.astro';
+
+
 ---
 
 <Layout>
@@ -27,10 +29,10 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 
 
 
-	<section class="py-1">
+	<section id="show-dates" class="py-1">
 		<Form2 />
 	</section>
-	<section>
+	<section id="about">
 		<Video2 />
 	</section>
 	<section class="py-1">
@@ -58,7 +60,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 	</div>
 </div>
 
-<div class="sm:block flex flex-nowrap overflow-x-scroll md:hidden ">
+<div class="sm:flex md:hidden sm:flex-nowrap sm:overflow-x-scroll  ">
 	{testimonials.map((testimonial) => (
 		<div class="w-full flex flex-col">
 				<TestimonialCard 
@@ -93,6 +95,11 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 	h2,h3,h4,h5,h6{
 		font-family: "Oswald", sans-serif;
 		color:#172f43;
+	}
+
+	footer h2{
+		font-family: "Oswald", sans-serif;
+		color:white;
 	}
 	.testimonial-heading{
 		color:#fff;
