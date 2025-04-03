@@ -5,21 +5,22 @@ const showDates = [
   { date: 'Friday, 7:00pm', venue: 'The Yuk Yuk’s Comedy Club 13103 Fort Rd NW, Edmonton, AB' },
   { date: 'Saturday, 9:00pm', venue: 'The Yuk Yuk’s Comedy Club 13103 Fort Rd NW, Edmonton, AB' },
   { date: 'Sunday, 5:00pm', venue: 'The Yuk Yuk’s Comedy Club 13103 Fort Rd NW, Edmonton, AB' },
-  { date: 'Thursday, 7:00pm', venue: 'The Yuk Yuk’s Comedy Club 13103 Fort Rd NW, Edmonton, AB' },
+  { date: 'Sunday, 8:00pm', venue: 'The Yuk Yuk’s Comedy Club 13103 Fort Rd NW, Edmonton, AB' },
 ];
 ---
 
 
 <div class="py-1 lg:py-16 px-4 mx-auto max-w-screen-md w-full lg:w-1/2 bg-white text-black">
 <h2 class="w-full mb-4 text-4xl tracking-tight font-extrabold">Show Dates</h2>
-  <div class="border-1 rounded-xl">
-    {showDates.map((show) => (
-      <div class="flex justify-between items-center p-6 show-date">
-        <span class="text-lg font-medium">{show.date}</span>
-        <span class="text-lg">{show.venue}</span>
-      </div>
-    ))}
-  </div>
+<div class="border-1 rounded-xl w-full">
+  {showDates.map((show) => (
+    <div class="flex justify-between items-center p-6 show-date w-full">
+      <span class="text-lg font-medium flex-1">{show.date}</span>
+      <span class="text-lg flex-1 text-left">{show.venue}</span>
+    </div>
+  ))}
+</div>
+
 
   <div class="mt-8 text-center">
     <div class="flex justify-center">
