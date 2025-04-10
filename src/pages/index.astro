@@ -16,10 +16,19 @@ import Video2 from "../components/Video2.astro"
 import Video3 from "../components/Video3.astro"
 import Footer from "../components/Footer.astro";
 
-import { testimonials } from '../data/testimonialData';
+// import { testimonials } from '../data/testimonialData';
 import TestimonialCard from '../components/TestimonialCard.astro';
 
+import {sanity} from '../data/sanity'
 
+const query = `*[_type == "testimonials"]{
+  _id,
+  nameEvent,
+  testimonial
+}`;
+
+
+const testimonials = await sanity.fetch(query);
 ---
 
 <Layout>
@@ -36,45 +45,34 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 	<section id="about">
 		<Video2 />
 	</section>
-	<section class="py-1 px-4">
+	<section class="py-1 max-w-[1536px] mx-auto px-4">
 		<Gallery />
 	</section>
 	<!-- Testimonial Grid Section -->
 
 <!-- Heading for Testimonials -->
-<h2 class="text-3xl font-semibold mb-4 text-left px-4 py-6 grid-cols-12">
-  Testimonials
-</h2>
+
 
 <!-- Grid of Testimonial Cards -->
-<div class="container mx-auto px-4 testimonial-card sm:hidden md:block">
-	
-	<div class="justify-center flex flex-wrap gap-4">
-			{testimonials.map((testimonial) => (
-					<div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6 flex flex-col">
-							<TestimonialCard 
-									name_event={testimonial.name_event} 
-									testimonial={testimonial.testimonial} 
-							/>
-					</div>
-			))}
-	</div>
-</div>
-
-<!-- <div class="sm:flex md:hidden sm:flex-nowrap sm:overflow-x-scroll  ">
-	{testimonials.map((testimonial) => (
-		<div class="w-full flex flex-col">
-				<TestimonialCard 
-						name_event={testimonial.name_event} 
-						testimonial={testimonial.testimonial} 
-				/>
+<section class="py-1 px-4 mb-8">
+	<div class="max-w-[1536px] mx-auto">
+		<h2 class="text-3xl font-semibold mb-4 text-left p-3">
+			Testimonials
+		  </h2>
+		<div class="container mx-auto px-4 testimonial-card sm:hidden md:block">
+			<div class="justify-center flex flex-wrap gap-4">
+					{testimonials.map((item) => (
+							<div class="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6 flex flex-col">
+									<TestimonialCard
+											name_event={item.nameEvent}
+											testimonial={item.testimonial}
+									/>
+							</div>
+					))}
+			</div>
 		</div>
-))}
-</div> -->
-
-	
-	<!-- extra classes from overflow cards -->
-	 <!-- sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/5 2xl:w-1/6 -->
+	</div>
+</section>
 	  <BackToTop />
 	<Footer />
 </Layout>
